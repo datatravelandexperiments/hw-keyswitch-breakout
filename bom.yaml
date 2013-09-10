@@ -1,0 +1,44 @@
+name: Keyswitch breakout boards
+
+parts:
+
+  - &D-1N4148
+    desc:       Small signal diode, e.g. 1N4148 type
+    value:      1N4148
+
+  - &D-SS-SMD-1206
+    desc:       Small signal diode, e.g. 1N4148 type
+    package:    SMD-1206
+    source:
+      - http://www.digikey.ca/product-detail/en/CD1206-S01575/CD1206-S01575CT-ND/3741949
+
+  - &D-LED-3MM
+    desc:       3mm LED
+
+  - &D-LED-5MM-2MM
+    desc:       5mm × 2mm rectangular LED
+
+  - &SW-ALPS-SKC
+    desc:       ALPS SKC type keyswitch
+
+  - &SW-CHERRY-MX
+    desc:       Cherry MX type keyswitch
+
+boards:
+
+  -
+    name:         alps-skc-1
+    description:  Breakout for one ALPS SKC type keyswitch.
+    parts:
+      - {name: D1,  part: *D-SS-SMD-1206}
+      - {name: D2,  part: *D-LED-5MM-2MM}
+      - {name: SW1, part: *SW-ALPS-SKC}
+
+  -
+    name:         cherry-mx-1
+    description:  Breakout for one Cherry MX type keyswitch.
+    parts:
+      - {name: D1,  part: *D-SS-SMD-1206}
+      - {name: D2,  part: *D-1N4148}
+      - {name: D3,  part: *D-LED-3MM}
+      - {name: SW1, part: *SW-CHERRY-MX}
